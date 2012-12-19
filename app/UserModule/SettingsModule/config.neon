@@ -1,0 +1,12 @@
+parameters:
+	user:
+		menu:
+			loggedIn:
+				- { __label: 'Settings', link: ':User:Settings:Dashboard:', icon: wrench }
+
+	settings:
+		homepage: { __label: 'Settings', link: ':User:Settings:Dashboard:' }
+		items: {
+			{ __label: 'Email', link: ':User:Settings:Email:' }
+			{ __label: 'Password', link: ':User:Settings:Password:' },
+		}

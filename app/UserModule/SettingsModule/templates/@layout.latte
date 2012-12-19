@@ -1,0 +1,12 @@
+{layout ../../../templates/@layout.latte}
+
+{block content}
+	<div class="row">
+		<div class="span3">
+			{control menu}
+		</div>
+		<div class="span9" n:ifset="#settings">
+			{include #settings}
+		</div>
+	</div>
+{/block}

@@ -1,0 +1,102 @@
+{
+	"name": "mishak/nkp-harvest-webadmin",
+	"description": "Administration tool for web harvest processing.",
+	"license": [ "NK2624/2012" ],
+	"authors": [
+		{
+			"name": "Michal Gebauer",
+			"homepage": "https://mishak.net"
+		}
+	],
+	"config": {
+		"vendor-dir": "libs"
+	},
+	"require": {
+		"php": ">= 5.3.0",
+		"nette/nette": ">= 2.0.7",
+		"mishak/web-resource-management": "1.1.6",
+		"mishak/wrm-jquery": "1.8.3",
+		"mishak/wrm-bootstrap": "2.2.1",
+		"twitter/bootstrap": "2.2.1",
+		"janmarek/navigation": "1.0.0",
+		"kdyby/bootstrap-form-renderer": "1.0.0",
+		"geshi/geshi": "1.0.8.11",
+		"mishak/archive-tar": "@dev"
+	},
+	"require-dev": {
+		"nette/tester": "@dev",
+		"kdyby/redis-extension": "@dev"
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"version": "1.8.3",
+				"name": "jquery/jquery",
+				"dist": {
+					"url": "http://code.jquery.com/jquery-1.8.3.js",
+					"type": "file"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"version": "1.2.1",
+				"name": "vojtech-dobes/nette.ajax.js",
+				"source": {
+					"url": "https://github.com/vojtech-dobes/nette.ajax.js",
+					"type": "git",
+					"reference": "tags/v1.2.1"
+				},
+				"dist": {
+					"url": "https://github.com/vojtech-dobes/nette.ajax.js/archive/1.2.1.zip",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"version": "2.2.1",
+				"name": "twitter/bootstrap",
+				"source": {
+					"url": "https://github.com/twitter/bootstrap.git",
+					"type": "git",
+					"reference": "tags/v2.2.1"
+				},
+				"dist": {
+					"url": "https://github.com/twitter/bootstrap/zipball/v2.2.1",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"version": "1.0.0",
+				"name": "janmarek/navigation",
+				"source": {
+					"url": "git://github.com/janmarek/Navigation.git",
+					"type": "git",
+					"reference": "master"
+				},
+				"dist": {
+					"url": "https://github.com/janmarek/Navigation/zipball/master",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"version": "1.0.8.11",
+				"name": "geshi/geshi",
+				"dist": {
+					"url": "http://garr.dl.sourceforge.net/project/geshi/geshi/GeSHi%201.0.8.11/GeSHi-1.0.8.11.zip",
+					"type": "zip"
+				}
+			}
+		}
+	]
+}

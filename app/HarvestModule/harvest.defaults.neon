@@ -1,0 +1,361 @@
+parameters:
+	harvest:
+		settings:
+			default:
+				description: Default template configuration for Warc and Arc harvests
+				template: true
+				sources:
+					mimes:
+						filename: mimetype-report.txt
+						depth: 1
+						type: table
+					hosts:
+						filename: hosts-report.txt
+						depth: 1
+						type: table
+					responses:
+						filename: responsecode-report.txt
+						depth: 1
+						type: table
+
+					order:
+						filename: order.xml
+						depth: 1
+						type: xml
+					crawl:
+						filename: crawl-report.txt
+						depth: 1
+						type: headers
+
+					seeds:
+						filename:
+							- seeds.txt
+							- seeds-report.txt
+						depth: 1
+						type: dbSelection
+						options:
+							comments: '#'
+							connection: @nette.database.wadmin
+							table: seeds
+							field: url
+							# this options is necessary due to possible input of table instead of just lines
+							tableDataSourceQuery: seed
+							ignoreEmptyRows: true
+
+					archives:
+						score: 1 # detection priority
+						type: archives
+						filename: # mask
+						options:
+							infoProvider: @harvest.webArchive
+
+				#####################################################################
+				# NODES:
+				#
+				# ATTRIBUTES
+				# name:
+				# @scope node
+				# @required
+				#
+				# value: <string or array>
+				# @scope node
+				# @use source
+				# @optional
+				# @see HarvestModule\XmlGenerator::getValue
+				# If value is an array first not null item is used.
+				# Value can use special syntax to include source data.
+				#	<[source:]"query"[|format[:parameter:"quoted":*]][|format ... ]]>
+				# Quotes are optional (required for > and : in query).
+				# Unquoted asterisk means current value.
+				# If all queries in string return NULL output value will be NULL.
+				#
+				# attr:
+				#	name: <value>
+				# @scope node
+				# @optional
+				# @use source
+				# @see value
+				#
+				# source:
+				# @scope: node + children
+				# Default source for query expression in string.
+				# If source is empty node is marked as EMPTY.
+				#
+				# items:
+				#	-
+				#		<child>
+				# @scope: node
+				# @use source
+				# Current source must implement ITable.
+				# For childrens default source is set to current item.
+				# If there are no items node is marked as EMPTY.
+				#
+				# defaults:
+				#	attribute: <value>
+				# @scope: node + children
+				# Defines default values for node and its children.
+				#
+				# xmlns:
+				#	namespace: URI
+				# @scope: node
+				# Define XML namespaces
+				#
+				# optional: true|false
+				# @scope: node
+				# Don't append node if all included values of subchildren were empty.
+				# If no values are processed node will be included.
+				#
+				# CHILDREN
+				# Children nodes are defined via this syntax
+				# -
+				#	<child>
+				######################################################################
+
+
+				xml:
+					name: mets:mets
+					xmlns:
+						mets: http://www.loc.gov/METS/
+						xlink: http://www.w3.org/1999/xlink
+						xsi: http://www.w3.org/2001/XMLSchema-instance
+					attrs:
+						xsi:schemaLocation: http://www.w3.org/2001/XMLSchema-instance http://www.w3.org/2001/XMLSchema.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
+
+					-
+						name: mets:metsHdr
+						attrs:
+							ROLE: CREATOR
+							TYPE: ORGANIZATION
+						-
+							name: 'mets:name'
+							value: ABA001
+
+					-
+						name: mets:techMD
+						optional: true
+						attrs:
+							ID: techMD_0001
+						-
+							name: mets:mdWrap
+							attrs:
+								MDTYPE: OTHER
+								OTHERMDTYPE: containerMD
+							-
+								name: mets:xmlData
+								-
+									name: containerMD:containerMD
+									xmlns:
+										containerMD: http://bibnum.bnf.fr/ns/containerMD-v1
+									-
+										name: containerMD:entries
+										-
+											# http://bibnum.bnf.fr/containerMD-v1/documentation/containerMD-v1.html#Link2D
+											name: containerMD:entriesInformation
+											attrs:
+												number: '<mimes:sum(urls)>'
+
+											# TECHNICAL DATA
+											-
+												name: containerMD:formats
+												source: mimes
+												items:
+													name: containerMD:format
+													attrs:
+														number: <urls>
+														globalSize: <bytes>
+														name: <mime-types>
+											-
+												name: containerMD:entriesExtension
+												-
+													name: # set in custom config
+													__id: entries
+													-
+														name: containerMD:hosts
+														source: hosts
+														items:
+															name: containerMD:host
+															attrs:
+																number: <urls>
+																globalSize: <bytes>
+															value: <host>
+													-
+														name: containerMD:responses
+														source: responses
+														items:
+															name: containerMD:response
+															attrs:
+																number: <urls>
+																protocolName: http
+															value: <rescode>
+
+					# HARVEST DESCRIPTION
+					-
+						name: mets:dmdSec
+						attrs:
+							ID: DCMD_CRAWL_0001
+						-
+							name: mets:mdWrap
+							attrs:
+								DMTYPE: DC
+								MIMETYPE: text/xml
+							-
+								name: mets:xmlData
+								xmlns:
+									dc: http://purl.org/dc/elements/1.1/
+								attrs:
+								-
+									name: oai_dc:dc
+									defaults:
+										optional: true
+									xmlns:
+										oai_dc: http://www.openarchives.org/OAI/2.0/oai_dc/
+									attrs:
+									-
+										name: dc:title
+										value:
+											- <form:name>
+											- <crawl:Crawl Name>
+											- '<order://meta/name|first>'
+											- <harvest:directory|basename>
+									-
+										name: dc:creator
+										value:
+											- <form:organization>
+											- '<order://meta/organization|first>'
+									-
+										name: dc:creator
+										value:
+											- <form:operator>
+											- '<order://meta/operator|first>'
+									-
+										name: dc:type
+										value: Crawl
+									-
+										name: dc:date
+										value: '<order://meta/date|first|datetime|!format:c>'
+									-
+										name: dc:date
+										value: 'Duration: <crawl:Duration Time>'
+									-
+										name: dc:audience
+										value:
+											- <form:audience>
+											- '<order://meta/audience|first>'
+											- ABA 001
+									-
+										name: dc:extent
+										value: <crawl:Total Raw Data Size in Bytes>
+									-
+										name: dc:description
+										value:
+											- <form:description>
+											- '<order://meta/description|first>'
+									-
+										name: dc:identifier
+										value: <harvest:uuid>
+									-
+										name: dc:note
+										value: <form:note>
+									-
+										name: dc:note
+										value: 'Crawl Status: <crawl:Crawl Status>'
+
+					# SOURCES DESCRIPTION (seeds)
+					-
+						name: mets:dmdSec
+						optional: true
+						source: seeds
+						attrs:
+							ID: DCMD_SEEDS_0001
+						-
+							name: 'mets:mdWrap'
+							attrs:
+								MDTYPE: DC
+								MIMETYPE: text/xml
+							-
+								name: mets:xmlData
+								defaults:
+									optional: true
+								xmlns:
+									rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+									dc: http://purl.org/dc/elements/1.1/
+
+								items:
+									name: rdf:Description
+									attrs:
+										rdf:about: <url>
+									-
+										name: dc:title
+										value: <resource.title>
+									-
+										name: dc:subject
+										value: <resource.conspectus.category>
+									-
+										name: dc:subject
+										value: <resource.conspectus_subcategory.subcategory>
+									-
+										name: dc:creator
+										value: <resource.curator.firstname> <resource.curator.lastname>
+									-
+										name: dc:identifier
+										value: 'Alephsysno: <resource.aleph_id>'
+										optional: true
+									-
+										name: dc:identifier
+										value: 'ISSN: <resource.issn>'
+										optional: true
+									-
+										name: dc:date
+										value: <resource.catalogued|datetime|!format:c>
+									-
+										name: dc:note
+										value: <resource.comments>
+										optional: true
+									-
+										name: dc:note
+										value: <resource.annotation>
+										optional: true
+									-
+										name: dc:note
+										value: <resource.tech_problems>
+										optional: true
+									-
+										name: dc:note
+										value: <comments>
+										optional: true
+
+					# MAP OF ARCHIVES
+					-
+						name: 'mets:fileSec'
+						-
+							__id: fileGrp
+							name: 'mets:fileGrp'
+							source: archives
+							items:
+								__id: file
+								name: 'mets:file'
+								attrs:
+									CHECKSUM: <md5>
+									CHECKSUMTYPE: MD5
+									CREATED: <datetime|datetime|!format:c>
+									ID: <id>
+									MIMETYPE: # set in custom config
+									SEQ: <iterator:index>
+									SIZE: <size>
+								-
+									name: 'mets:FLocat'
+									attrs:
+										LOCTYPE: URL
+										xlink:href: <basename>
+
+				# XPATH MAP FOR DEFAULT FORM VALUES
+				form:
+					xmlns:
+						oai_dc: http://www.openarchives.org/OAI/2.0/oai_dc/
+						dc: http://purl.org/dc/elements/1.1/
+					items:
+						name: //oai_dc:dc/dc:title
+						description: //oai_dc:dc/dc:description
+						organization: '//oai_dc:dc/dc:creator[1]'
+						operator: '//oai_dc:dc/dc:creator[2]'
+						audience: //oai_dc:dc/dc:audience

@@ -1,0 +1,275 @@
+
+[class^="icon-lang-"],
+[class*="icon-lang-"] {
+  width: 16px;
+  height: 11px;
+  margin-top: 3px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("../images/famfamfam-flags.png");
+  background-position: 14px 14px;
+}
+
+.nav-tabs > .active > a > [class^="icon-lang-"],
+.nav-tabs > .active > a > [class*=" icon-lang-"],
+.nav-pills > .active > a > [class^="icon-lang-"],
+.nav-pills > .active > a > [class*=" icon-lang-"],
+.nav-list > .active > a > [class^="icon-lang-"],
+.nav-list > .active > a > [class*=" icon-lang-"],
+.navbar-inverse .nav > .active > a > [class^="icon-lang-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-lang-"],
+.dropdown-menu > li > a:hover > [class^="icon-lang-"],
+.dropdown-menu > li > a:hover > [class*=" icon-lang-"],
+.dropdown-menu > .active > a > [class^="icon-lang-"],
+.dropdown-menu > .active > a > [class*=" icon-lang-"] {
+  background-image: url("../images/famfamfam-flags.png");
+}
+
+.icon-lang-ad{ background-position: 0 0; }
+.icon-lang-ae{ background-position: 0 -35px; }
+.icon-lang-af{ background-position: 0 -70px; }
+.icon-lang-ag{ background-position: 0 -105px; }
+.icon-lang-ai{ background-position: 0 -140px; }
+.icon-lang-al{ background-position: 0 -175px; }
+.icon-lang-am{ background-position: 0 -210px; }
+.icon-lang-an{ background-position: 0 -245px; }
+.icon-lang-ao{ background-position: 0 -280px; }
+.icon-lang-ar{ background-position: 0 -315px; }
+.icon-lang-as{ background-position: 0 -350px; }
+.icon-lang-at{ background-position: 0 -385px; }
+.icon-lang-au{ background-position: 0 -420px; }
+.icon-lang-aw{ background-position: 0 -455px; }
+.icon-lang-ax{ background-position: 0 -490px; }
+.icon-lang-az{ background-position: 0 -525px; }
+.icon-lang-ba{ background-position: 0 -560px; }
+.icon-lang-bb{ background-position: 0 -595px; }
+.icon-lang-bd{ background-position: 0 -630px; }
+.icon-lang-be{ background-position: 0 -665px; }
+.icon-lang-bf{ background-position: 0 -700px; }
+.icon-lang-bg{ background-position: 0 -735px; }
+.icon-lang-bh{ background-position: 0 -770px; }
+.icon-lang-bi{ background-position: 0 -805px; }
+.icon-lang-bj{ background-position: 0 -840px; }
+.icon-lang-bm{ background-position: 0 -875px; }
+.icon-lang-bn{ background-position: 0 -910px; }
+.icon-lang-bo{ background-position: 0 -945px; }
+.icon-lang-br{ background-position: 0 -980px; }
+.icon-lang-bs{ background-position: 0 -1015px; }
+.icon-lang-bt{ background-position: 0 -1050px; }
+.icon-lang-bv{ background-position: 0 -1085px; }
+.icon-lang-bw{ background-position: 0 -1120px; }
+.icon-lang-by{ background-position: 0 -1155px; }
+.icon-lang-bz{ background-position: 0 -1190px; }
+.icon-lang-ca{ background-position: 0 -1225px; }
+.icon-lang-catalonia{ background-position: 0 -1260px; }
+.icon-lang-cc{ background-position: 0 -1295px; }
+.icon-lang-cd{ background-position: 0 -1330px; }
+.icon-lang-cf{ background-position: 0 -1365px; }
+.icon-lang-cg{ background-position: 0 -1400px; }
+.icon-lang-ch{ background-position: 0 -1435px; width: 11px; height: 11px; }
+.icon-lang-ci{ background-position: 0 -1470px; }
+.icon-lang-ck{ background-position: 0 -1505px; }
+.icon-lang-cl{ background-position: 0 -1540px; }
+.icon-lang-cm{ background-position: 0 -1575px; }
+.icon-lang-cn{ background-position: 0 -1610px; }
+.icon-lang-co{ background-position: 0 -1645px; }
+.icon-lang-cr{ background-position: 0 -1680px; }
+.icon-lang-cs{ background-position: 0 -1715px; }
+.icon-lang-cu{ background-position: 0 -1750px; }
+.icon-lang-cv{ background-position: 0 -1785px; }
+.icon-lang-cx{ background-position: 0 -1820px; }
+.icon-lang-cy{ background-position: 0 -1855px; }
+.icon-lang-cz{ background-position: 0 -1890px; }
+.icon-lang-de{ background-position: 0 -1925px; }
+.icon-lang-dj{ background-position: 0 -1960px; }
+.icon-lang-dk{ background-position: -40px 0; }
+.icon-lang-dm{ background-position: -40px -35px; }
+.icon-lang-do{ background-position: -40px -70px; }
+.icon-lang-dz{ background-position: -40px -105px; }
+.icon-lang-ec{ background-position: -40px -140px; }
+.icon-lang-ee{ background-position: -40px -175px; }
+.icon-lang-eg{ background-position: -40px -210px; }
+.icon-lang-eh{ background-position: -40px -245px; }
+.icon-lang-england{ background-position: -40px -280px; }
+.icon-lang-er{ background-position: -40px -315px; }
+.icon-lang-es{ background-position: -40px -350px; }
+.icon-lang-et{ background-position: -40px -385px; }
+.icon-lang-europeanunion{ background-position: -40px -420px; }
+.icon-lang-fam{ background-position: -40px -455px; }
+.icon-lang-fi{ background-position: -40px -490px; }
+.icon-lang-fj{ background-position: -40px -525px; }
+.icon-lang-fk{ background-position: -40px -560px; }
+.icon-lang-fm{ background-position: -40px -595px; }
+.icon-lang-fo{ background-position: -40px -630px; }
+.icon-lang-fr{ background-position: -40px -665px; }
+.icon-lang-ga{ background-position: -40px -700px; }
+.icon-lang-gb{ background-position: -40px -735px; }
+.icon-lang-gd{ background-position: -40px -770px; }
+.icon-lang-ge{ background-position: -40px -805px; }
+.icon-lang-gf{ background-position: -40px -840px; }
+.icon-lang-gh{ background-position: -40px -875px; }
+.icon-lang-gi{ background-position: -40px -910px; }
+.icon-lang-gl{ background-position: -40px -945px; }
+.icon-lang-gm{ background-position: -40px -980px; }
+.icon-lang-gn{ background-position: -40px -1015px; }
+.icon-lang-gp{ background-position: -40px -1050px; }
+.icon-lang-gq{ background-position: -40px -1085px; }
+.icon-lang-gr{ background-position: -40px -1120px; }
+.icon-lang-gs{ background-position: -40px -1155px; }
+.icon-lang-gt{ background-position: -40px -1190px; }
+.icon-lang-gu{ background-position: -40px -1225px; }
+.icon-lang-gw{ background-position: -40px -1260px; }
+.icon-lang-gy{ background-position: -40px -1295px; }
+.icon-lang-hk{ background-position: -40px -1330px; }
+.icon-lang-hm{ background-position: -40px -1365px; }
+.icon-lang-hn{ background-position: -40px -1400px; }
+.icon-lang-hr{ background-position: -40px -1435px; }
+.icon-lang-ht{ background-position: -40px -1470px; }
+.icon-lang-hu{ background-position: -40px -1505px; }
+.icon-lang-id{ background-position: -40px -1540px; }
+.icon-lang-ie{ background-position: -40px -1575px; }
+.icon-lang-il{ background-position: -40px -1610px; }
+.icon-lang-in{ background-position: -40px -1645px; }
+.icon-lang-io{ background-position: -40px -1680px; }
+.icon-lang-iq{ background-position: -40px -1715px; }
+.icon-lang-ir{ background-position: -40px -1750px; }
+.icon-lang-is{ background-position: -40px -1785px; }
+.icon-lang-it{ background-position: -40px -1820px; }
+.icon-lang-jm{ background-position: -40px -1855px; }
+.icon-lang-jo{ background-position: -40px -1890px; }
+.icon-lang-jp{ background-position: -40px -1925px; }
+.icon-lang-ke{ background-position: -40px -1960px; }
+.icon-lang-kg{ background-position: -80px 0; }
+.icon-lang-kh{ background-position: -80px -35px; }
+.icon-lang-ki{ background-position: -80px -70px; }
+.icon-lang-km{ background-position: -80px -105px; }
+.icon-lang-kn{ background-position: -80px -140px; }
+.icon-lang-kp{ background-position: -80px -175px; }
+.icon-lang-kr{ background-position: -80px -210px; }
+.icon-lang-kw{ background-position: -80px -245px; }
+.icon-lang-ky{ background-position: -80px -280px; }
+.icon-lang-kz{ background-position: -80px -315px; }
+.icon-lang-la{ background-position: -80px -350px; }
+.icon-lang-lb{ background-position: -80px -385px; }
+.icon-lang-lc{ background-position: -80px -420px; }
+.icon-lang-li{ background-position: -80px -455px; }
+.icon-lang-lk{ background-position: -80px -490px; }
+.icon-lang-lr{ background-position: -80px -525px; }
+.icon-lang-ls{ background-position: -80px -560px; }
+.icon-lang-lt{ background-position: -80px -595px; }
+.icon-lang-lu{ background-position: -80px -630px; }
+.icon-lang-lv{ background-position: -80px -665px; }
+.icon-lang-ly{ background-position: -80px -700px; }
+.icon-lang-ma{ background-position: -80px -735px; }
+.icon-lang-mc{ background-position: -80px -770px; }
+.icon-lang-md{ background-position: -80px -805px; }
+.icon-lang-me{ background-position: -80px -840px; width: 16px; height: 12px; }
+.icon-lang-mg{ background-position: -80px -876px; }
+.icon-lang-mh{ background-position: -80px -911px; }
+.icon-lang-mk{ background-position: -80px -946px; }
+.icon-lang-ml{ background-position: -80px -981px; }
+.icon-lang-mm{ background-position: -80px -1016px; }
+.icon-lang-mn{ background-position: -80px -1051px; }
+.icon-lang-mo{ background-position: -80px -1086px; }
+.icon-lang-mp{ background-position: -80px -1121px; }
+.icon-lang-mq{ background-position: -80px -1156px; }
+.icon-lang-mr{ background-position: -80px -1191px; }
+.icon-lang-ms{ background-position: -80px -1226px; }
+.icon-lang-mt{ background-position: -80px -1261px; }
+.icon-lang-mu{ background-position: -80px -1296px; }
+.icon-lang-mv{ background-position: -80px -1331px; }
+.icon-lang-mw{ background-position: -80px -1366px; }
+.icon-lang-mx{ background-position: -80px -1401px; }
+.icon-lang-my{ background-position: -80px -1436px; }
+.icon-lang-mz{ background-position: -80px -1471px; }
+.icon-lang-na{ background-position: -80px -1506px; }
+.icon-lang-nc{ background-position: -80px -1541px; }
+.icon-lang-ne{ background-position: -80px -1576px; }
+.icon-lang-nf{ background-position: -80px -1611px; }
+.icon-lang-ng{ background-position: -80px -1646px; }
+.icon-lang-ni{ background-position: -80px -1681px; }
+.icon-lang-nl{ background-position: -80px -1716px; }
+.icon-lang-no{ background-position: -80px -1751px; }
+.icon-lang-np{ background-position: -80px -1786px; width: 9px; height: 11px; }
+.icon-lang-nr{ background-position: -80px -1821px; }
+.icon-lang-nu{ background-position: -80px -1856px; }
+.icon-lang-nz{ background-position: -80px -1891px; }
+.icon-lang-om{ background-position: -80px -1926px; }
+.icon-lang-pa{ background-position: -80px -1961px; }
+.icon-lang-pe{ background-position: -120px 0; }
+.icon-lang-pf{ background-position: -120px -35px; }
+.icon-lang-pg{ background-position: -120px -70px; }
+.icon-lang-ph{ background-position: -120px -105px; }
+.icon-lang-pk{ background-position: -120px -140px; }
+.icon-lang-pl{ background-position: -120px -175px; }
+.icon-lang-pm{ background-position: -120px -210px; }
+.icon-lang-pn{ background-position: -120px -245px; }
+.icon-lang-pr{ background-position: -120px -280px; }
+.icon-lang-ps{ background-position: -120px -315px; }
+.icon-lang-pt{ background-position: -120px -350px; }
+.icon-lang-pw{ background-position: -120px -385px; }
+.icon-lang-py{ background-position: -120px -420px; }
+.icon-lang-qa{ background-position: -120px -455px; }
+.icon-lang-re{ background-position: -120px -490px; }
+.icon-lang-ro{ background-position: -120px -525px; }
+.icon-lang-rs{ background-position: -120px -560px; }
+.icon-lang-ru{ background-position: -120px -595px; }
+.icon-lang-rw{ background-position: -120px -630px; }
+.icon-lang-sa{ background-position: -120px -665px; }
+.icon-lang-sb{ background-position: -120px -700px; }
+.icon-lang-sc{ background-position: -120px -735px; }
+.icon-lang-scotland{ background-position: -120px -770px; }
+.icon-lang-sd{ background-position: -120px -805px; }
+.icon-lang-se{ background-position: -120px -840px; }
+.icon-lang-sg{ background-position: -120px -875px; }
+.icon-lang-sh{ background-position: -120px -910px; }
+.icon-lang-si{ background-position: -120px -945px; }
+.icon-lang-sj{ background-position: -120px -980px; }
+.icon-lang-sk{ background-position: -120px -1015px; }
+.icon-lang-sl{ background-position: -120px -1050px; }
+.icon-lang-sm{ background-position: -120px -1085px; }
+.icon-lang-sn{ background-position: -120px -1120px; }
+.icon-lang-so{ background-position: -120px -1155px; }
+.icon-lang-sr{ background-position: -120px -1190px; }
+.icon-lang-st{ background-position: -120px -1225px; }
+.icon-lang-sv{ background-position: -120px -1260px; }
+.icon-lang-sy{ background-position: -120px -1295px; }
+.icon-lang-sz{ background-position: -120px -1330px; }
+.icon-lang-tc{ background-position: -120px -1365px; }
+.icon-lang-td{ background-position: -120px -1400px; }
+.icon-lang-tf{ background-position: -120px -1435px; }
+.icon-lang-tg{ background-position: -120px -1470px; }
+.icon-lang-th{ background-position: -120px -1505px; }
+.icon-lang-tj{ background-position: -120px -1540px; }
+.icon-lang-tk{ background-position: -120px -1575px; }
+.icon-lang-tl{ background-position: -120px -1610px; }
+.icon-lang-tm{ background-position: -120px -1645px; }
+.icon-lang-tn{ background-position: -120px -1680px; }
+.icon-lang-to{ background-position: -120px -1715px; }
+.icon-lang-tr{ background-position: -120px -1750px; }
+.icon-lang-tt{ background-position: -120px -1785px; }
+.icon-lang-tv{ background-position: -120px -1820px; }
+.icon-lang-tw{ background-position: -120px -1855px; }
+.icon-lang-tz{ background-position: -120px -1890px; }
+.icon-lang-ua{ background-position: -120px -1925px; }
+.icon-lang-ug{ background-position: -120px -1960px; }
+.icon-lang-um{ background-position: -160px 0; }
+.icon-lang-us{ background-position: -160px -35px; }
+.icon-lang-uy{ background-position: -160px -70px; }
+.icon-lang-uz{ background-position: -160px -105px; }
+.icon-lang-va{ background-position: -160px -140px; }
+.icon-lang-vc{ background-position: -160px -175px; }
+.icon-lang-ve{ background-position: -160px -210px; }
+.icon-lang-vg{ background-position: -160px -245px; }
+.icon-lang-vi{ background-position: -160px -280px; }
+.icon-lang-vn{ background-position: -160px -315px; }
+.icon-lang-vu{ background-position: -160px -350px; }
+.icon-lang-wales{ background-position: -160px -385px; }
+.icon-lang-wf{ background-position: -160px -420px; }
+.icon-lang-ws{ background-position: -160px -455px; }
+.icon-lang-ye{ background-position: -160px -490px; }
+.icon-lang-yt{ background-position: -160px -525px; }
+.icon-lang-za{ background-position: -160px -560px; }
+.icon-lang-zm{ background-position: -160px -595px; }
+.icon-lang-zw{ background-position: -160px -630px; }

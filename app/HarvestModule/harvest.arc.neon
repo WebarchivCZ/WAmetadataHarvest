@@ -1,0 +1,23 @@
+parameters:
+	harvest:
+		settings:
+			arc:
+				description: Harvest of ARC archives
+				extends: default
+
+				sources:
+					archives:
+						filename:
+							- *.arc
+							- *.arc.gz
+
+				replace:
+					entries:
+						name: containerMD:ARCEntries
+					fileGrp:
+						attrs:
+							ID: ARCSGROUP
+							Use: Arcs
+					file:
+						attrs:
+							MIMETYPE: application/X-arc

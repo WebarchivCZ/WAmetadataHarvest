@@ -1,0 +1,57 @@
+includes:
+	- SettingsModule/config.neon
+	- AdminModule/config.neon
+
+parameters:
+	user:
+		# must be lover than nette.session.expiration
+		session:
+			default: 0
+			remember-me: '+ 2 months'
+
+		after:
+			sign-in: ':Dashboard:'
+			sign-out: :User:Sign:in
+			sign-up: ':Dashboard:'
+			account-recovery: :User:Sign:in
+			set-password: :User:Sign:in
+			ticket-expired: :User:Sign:in
+			ticket-used: :User:Sign:in
+
+		account-recovery:
+			enabled: false
+			email: # support@server.tld
+			name: # Bot
+			position: # in charge of automated tasks
+
+		registration:
+			enabled: false
+
+		menu:
+			loggedIn:
+				- { separator: true, position: last }
+				- { __label: 'Sign out', link: ':User:Sign:out', icon: 'off', position: last }
+
+			guest:
+				- { __label: 'Sign up', link: ':User:Sign:up', position: last, visible: %user.registration.enabled% }
+				- { __label: 'Sign in', link: ':User:Sign:in', position: last }
+
+services:
+	user: UserModule\Security\User
+
+	userModel: User
+
+	authenticator: User\Authenticator
+
+	model_user: @userModel
+
+	model_user_accountrecovery_process:
+		class: User\AccountRecovery\Process
+		setup:
+			- setFrom(%user.account-recovery.email%)
+			- setProject(%name%)
+			- setPerson(%user.account-recovery.name%)
+			- setPosition(%user.account-recovery.position%)
+			- setTemplate(%appDir%/UserModule/emails/@accountRecovery.latte)
+
+	model_user_accountrecovery_ticket: User\AccountRecovery\Ticket

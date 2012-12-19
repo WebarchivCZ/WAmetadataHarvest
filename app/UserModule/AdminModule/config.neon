@@ -1,0 +1,4 @@
+parameters:
+	admin:
+		items:
+			- { __label: 'Users', link: ':User:Admin:Dashboard:' }

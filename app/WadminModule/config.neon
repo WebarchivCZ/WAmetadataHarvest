@@ -1,0 +1,16 @@
+parameters:
+	database:
+		wadmin:
+			driver: mysql
+
+nette:
+	database:
+		wadmin:
+			dsn: '%database.wadmin.driver%:host=%database.wadmin.host%;dbname=%database.wadmin.dbname%'
+			user: %database.wadmin.user%
+			password: %database.wadmin.password%
+			options: [
+				PDO::MYSQL_ATTR_INIT_COMMAND = 'SET NAMES "UTF8"'
+			]
+			autowired: FALSE
+			reflection: WadminModule\DatabaseReflection

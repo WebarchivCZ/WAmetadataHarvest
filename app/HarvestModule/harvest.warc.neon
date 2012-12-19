@@ -1,0 +1,23 @@
+parameters:
+	harvest:
+		settings:
+			warc:
+				description: Harvest of WARC archives
+				extends: default
+
+				sources:
+					archives:
+						filename:
+							- *.warc
+							- *.warc.gz
+
+				replace:
+					entries:
+						name: containerMD:WARCEntries
+					fileGrp:
+						attrs:
+							ID: WARCSGROUP
+							Use: Warcs
+					file:
+						attrs:
+							MIMETYPE: application/X-warc

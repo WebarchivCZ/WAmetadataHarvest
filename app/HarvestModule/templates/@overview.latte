@@ -1,0 +1,45 @@
+{default showDirectory = TRUE}
+{default showXml = FALSE}
+{default actions = []}
+{default percent = 100}
+<div class="well well-small">
+	<div class="progress progress-striped active" n:if="$percent < 100">
+	  <div class="bar bar-success" style="width: {$percent}%;"></div>
+	</div>
+	<div class="btn-toolbar pull-right" n:if="$actions">
+		<div class="btn-group">
+			{var default = array_shift($actions)}
+			<a n:href="$default[0] id => $harvest->id" class="btn btn-large{ifset $default[3]} btn-{$default[3]}{/ifset}">
+				{_$default[1]}
+			</a>
+			{if $actions}
+			<button href="#" class="btn btn-large{ifset $default[3]} btn-{$default[3]}{/ifset} dropdown-toggle" data-toggle="dropdown">
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li n:foreach="$actions as $action" n:class="!$action ? divider"><a n:href="$action[0] id => $harvest->id" tabindex="-1" n:if="$action"><i class="icon icon-{$action[2]}"></i> {_$action[1]}</a></li>
+			</ul>
+			{/if}
+		</div>
+	</div>
+	<dl class="dl-horizontal">
+		<dt>{_'UUID'}</dt>
+		<dd>{$harvest->uuid}</dd>
+		<dt>{_'Created'}</dt>
+		<dd>{$harvest->created|date}</dd>
+		{if $harvest->created != $harvest->updated}
+		<dt>{_'Updated'}</dt>
+		<dd>{$harvest->created|date}</dd>
+		{/if}
+		<dt>{_'Status'}</td>
+		<dd><span class="label label-warning" n:if="$harvest->status === HarvestModule\Harvest::DISCOVERED">{_'Discovered'}</span></dd>
+		<dd><span class="label label-info" n:if="$harvest->status === HarvestModule\Harvest::PENDING">{_'Pending'}</span></dd>
+		<dd><span class="label label-success" n:if="$harvest->status === HarvestModule\Harvest::PROCESSED">{_'Processed'}</span></dd>
+		{if $showDirectory}
+		<dt>{_'Directory'}</dt>
+		<dd>{$harvest->directory}</dd>
+		{/if}
+		<dt>{_'Setting'}</dt>
+		<dd>{$harvest->setting}</dd>
+	</dl>
+</div>

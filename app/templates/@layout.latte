@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{$lang}" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>{ifset #title}{include #title} &ndash; {/ifset}{$projectName}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{styles bootstrap, 'bootstrap.fixes', 'bootstrap.adjustments', 'icon.lang', screen}
+		{block head}{/block}
+	</head>
+	<body>
+		<script> document.body.className+=' js' </script>
+
+		{control navigation}
+
+		{ifset #header}
+			{include #header}
+		{else}
+			{control breadcrumbs:breadcrumbs}
+		{/ifset}
+
+		<div class="container">
+			<div n:foreach="$staticMessages as $staticMessage" class="alert alert-{$staticMessage->type}">
+				{$staticMessage->message}
+			</div>
+
+			<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{$flash->message}
+			</div>
+
+			{include #content}
+		</div>
+
+		{control userMenu}
+
+		<ul id="locale">
+			<li class="dropdown pull-right">
+				<a class="dropdown-toggle dropdown-text" data-toggle="dropdown" href="#"><i class="icon-lang-{$presenter->context->parameters['locale']['icons'][$locale]}"></i> {_$locale} <b class="caret"></b></a>
+				<ul class="dropdown-menu pull-right" id="locale-menu">
+					<li n:foreach="$availableLocales as $aLocale"><a tabindex="-1" n:href="this locale => $aLocale"><i class="icon-lang-{$presenter->context->parameters['locale']['icons'][$aLocale]}"></i> {_$aLocale}</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		{scripts jquery, bootstrap, main}
+		{block script}{/block}
+		<script>
+			$('.navbar-fixed-top > .navbar-inner > .container > .nav-collapse')
+				.append($('#user'))
+			$('ul.breadcrumb:first')
+				.append(
+					$('#locale').remove().find(' > li')
+				);
+		</script>
+	</body>
+</html>

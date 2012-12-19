@@ -1,0 +1,7 @@
+parameters:
+	admin:
+		homepage: { __label: 'Administration', link: ':Admin:Dashboard:' }
+
+	navigation:
+		items:
+			- { __label: 'Administration', link: ':Admin:Dashboard:', role: admin }

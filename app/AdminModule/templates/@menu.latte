@@ -1,0 +1,16 @@
+<div class="well"style="padding: 8px 0;">
+	<ul class="nav nav-list" n:if="$homepage || count($children)">
+		<li class="nav-header" n:if="$homepage"><a href="{$homepage->url}">{$homepage->label}</a></li>
+	{foreach $children as $item}
+		{var $sub = $renderChildren && count($item->getComponents())}
+		{if $sub}
+			<li n:class="nav-header, $item->isCurrent ? active"><a href="{$item->url}">{$item->label}</a></li>
+			{foreach $item->getComponents() as $child}
+			<li><a href="{$child->url}" n:class="$child->isCurrent ? active">{$child->label}</a></li>
+			{/foreach}
+		{else}
+			<li><a href="{$item->url}" n:class="$item->isCurrent ? active">{$item->label}</a></li>
+		{/if}
+	{/foreach}
+	</ul>
+</div>

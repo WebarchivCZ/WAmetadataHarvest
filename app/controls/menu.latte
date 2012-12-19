@@ -1,0 +1,20 @@
+<ul {$element->attributes()} n:inner-foreach="$items as $item">
+	{continueIf isset($item->visible) && !$item->visible}
+
+	{ifset $item->separator}
+		<li class="divider-vertical"></li>
+	{elseifset $item->items}
+		<li class="dropdown">
+			<a href="{block link}{ifset $item->link}{plink $item->link}{elseifset $item->url}{$item->url}{else}#{/ifset}{/block}" class="dropdown-toggle" data-toggle="dropdown">{block label}{ifset $item->icon}<i class="icon icon-{$item->icon}"></i> {/ifset}{ifset $item->__label}{_$item->__label}{else}{$item->label}{/ifset}{/block} <b class="caret"></b></a>
+			<ul class="dropdown-menu" n:inner-foreach="$item->items as $_item">
+				{ifset $_item->separator}
+					<li class="divider"></li>
+				{else}
+					<li><a tablindex="-1" href="{include #link item => $_item}">{include #label item => $_item}</a></li>
+				{/ifset}
+			</ul>
+		</li>
+	{else}
+		<li><a href="{include #link}">{include #label}</a></li>
+	{/ifset}
+</ul>

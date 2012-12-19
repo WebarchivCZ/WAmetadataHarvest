@@ -1,0 +1,12 @@
+{script 'bootstrap.forms', 'bootstrap.netteForms'}
+{block admin}
+	<h3>{ifset $editedUser}{_'Edit User'}{else}{_'Create User'}{/ifset}</h3>
+	{control form}
+{/block}
+{block script}
+<script>
+$(function () {
+	Bootstrap.forms.decorate($('#frm-form'));
+})
+</script>
+{/block}

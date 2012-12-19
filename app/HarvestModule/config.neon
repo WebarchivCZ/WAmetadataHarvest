@@ -1,0 +1,58 @@
+includes:
+	- AdminModule/config.neon
+	- harvest.defaults.neon # common settings for arc and warc
+	- harvest.arc.neon
+	- harvest.warc.neon
+
+parameters:
+	navigation:
+		items:
+			- { __label: 'Harvests', link: ':Harvest:Browse:', role: [ user, admin ] }
+
+	harvest:
+		xml:
+			# empty means write to harvest directory
+			# othervise will create same directory structure in output directory
+			output:
+		sources:
+			archives: HarvestModule\Source\Archives
+			xml: HarvestModule\Source\Xml
+			table: HarvestModule\Source\Table
+			headers: HarvestModule\Source\Headers
+			dbSelection: HarvestModule\Source\DbSelection
+
+		directories:
+			# Enter directories which include harvests
+			# <name>: <path>
+		settings:
+			# list of different settings to support different harvests
+
+
+
+services:
+	model_harvest:
+		class: HarvestModule\Harvest
+		setup:
+			- injectDirectories
+			- setXmlOutputDirectory(%harvest.xml.output%)
+
+	harvest.cache: Nette\Caching\Cache(..., 'harvest')
+
+	harvest.directories: HarvestModule\Directories(%harvest.directories%)
+	harvest.fileLocator: HarvestModule\Source\FileLocator(@harvest.cache)
+
+	harvest.configBuilder:
+		class: HarvestModule\Config\Settings
+		setup:
+			- build(%harvest.settings%)
+	harvest.settingFactory: HarvestModule\Config\SettingFactory
+	harvest.settingSourceFactory: HarvestModule\Config\SourceFactory
+
+	harvest.settingsDetector: HarvestModule\Config\SettingDetector
+
+	harvest.sourceFactory: HarvestModule\Source\Factory(..., %harvest.sources%)
+	harvest.sourceCollector: HarvestModule\Source\Collector(..., @harvest.cache)
+	harvest.webArchive: HarvestModule\WebArchive(@harvest.cache)
+
+
+factories:

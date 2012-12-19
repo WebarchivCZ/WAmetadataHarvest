@@ -1,0 +1,44 @@
+/* Move brand back to left */
+body > .navbar .brand {
+  margin-left: -20px;
+  float: left;
+}
+
+.breadcrumb .dropdown-menu li {
+  display: list-item;
+  text-shadow: none;
+}
+
+.breadcrumb .dropdown .dropdown-toggle,
+.breadcrumb .dropdown .dropdown-toggle .caret {
+  color: #999;
+  border-top-color: #999;
+  text-shadow: none;
+}
+
+.breadcrumb .dropdown .dropdown-toggle:hover,
+.breadcrumb .dropdown .dropdown-toggle:hover .caret {
+  text-decoration: none;
+  color: #333;
+  border-top-color: #333;
+}
+
+.control-group label.tabs-left .nav-tabs {
+  float: right;
+  margin-right: 0;
+}
+
+.form-vertical-again label.control-label {
+  display: block;
+  float: none;
+  width: auto;
+  padding-top: 0;
+  text-align: left;
+}
+.form-vertical-again .controls {
+  margin-left: 0;
+}
+
+.control-group-checkboxes button {
+  margin: 0 4px 4px 0;
+}

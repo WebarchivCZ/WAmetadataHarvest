@@ -1,0 +1,13 @@
+{block admin}
+{form form}
+<div class="alert alert-block">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>{_'Warning!'}</h4>
+	{_'You are about to purge cache of stuff related to harvests. This may seriously slow down your life! Do you want to proceed?'}
+	<div class="btn-toolbar">
+		<a n:href="Dashboard:" class="btn">{_"Ain't nobody got time for that!"}</a>
+		{input purge class => 'btn btn-warning'}
+	</div>
+</div>
+{/form}
+{/block}

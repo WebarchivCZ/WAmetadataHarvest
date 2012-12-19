@@ -1,0 +1,10 @@
+{block title}{_"Sign In"}{/block}
+
+{block content}
+	<h2>{include #title}</h2>
+	{control signInForm}
+	<ul class="unstyled">
+		<li n:if="$user->canRecoverAccount()"><a n:href="AccountRecovery:">{_"Can't access your account?"}</a></li>
+		<li n:if="$user->canRegister()">{_'No account?'} <a n:href="up">{_'Sign up!'}</a></li>
+	</ul>
+{/block}

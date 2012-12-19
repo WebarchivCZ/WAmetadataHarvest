@@ -1,0 +1,27 @@
+<div class="navbar navbar-inverse navbar-fixed-top" n:if="$homepage || count($children)">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			{* $homepage->isCurrent does not apply in bootstrap *}
+			<a class="brand" href="{$homepage->url}">{$homepage->label}</a>
+
+			<div class="nav-collapse">
+				<ul class="nav" n:inner-foreach="$children as $item">
+					{var dropdown = $renderChildren && count($item->getComponents())}
+					<li n:class="$dropdown ? dropdown, $item->isCurrent ? active">
+						<a href="{$item->url}"{if $dropdown} class="dropdown-toggle" data-toggle="dropdown"{/if}>{$item->label}{if $dropdown} <b class="caret"></b>{/if}</a>
+						<ul class="dropdown-menu" n:if="$dropdown">
+							<li n:foreach="$item->getComponents() as $subitem">
+								<a tabindex="-1" href="{$subitem->url}">{$subitem->label}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

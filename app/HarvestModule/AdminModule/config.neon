@@ -1,0 +1,4 @@
+parameters:
+	admin:
+		items:
+			- { __label: 'Harvests', link: ':Harvest:Admin:Dashboard:' }

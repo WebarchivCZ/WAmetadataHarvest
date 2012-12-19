@@ -1,0 +1,6 @@
+<ul class="breadcrumb" n:if="$items">
+	<li n:foreach="$items as $item" n:class="$iterator->isLast() ? active">
+		<a href="{$item->url}" n:tag-if="$item->url && !$iterator->isLast()">{$item->label}</a>
+		{sep} <span class="divider">/</span>{/sep}
+	</li>
+</ul>

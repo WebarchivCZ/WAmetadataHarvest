@@ -1,0 +1,26 @@
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+a[href^="error:"] {
+	background: red;
+	color: white;
+}
+
+body {
+	position: relative;
+	padding-top: 40px;
+}
+
+td.right {
+	text-align: right;
+}
+
+td.center {
+	text-align: center;
+}

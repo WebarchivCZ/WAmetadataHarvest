@@ -1,0 +1,38 @@
+{block title}{_Users}{/block}
+{block admin}
+	<a n:href="CreateOrEdit:" class="btn btn-success pull-right"><i class="icon icon-plus icon-white"></i> {_'Add User'}</a>
+
+	<h2>{include #title}</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>{_Username}</th>
+				<th>{_Group}</th>
+				<th>{_Email}</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr n:foreach="$users as $_user" id="user-{$_user->getPrimary()}">
+				<td><i class="icon icon-user"></i> {$_user->username}</td>
+				<td>{_'group-' . $_user->group}</td>
+				<td>{$_user->email}</td>
+				<td>
+					{var canDelete = $_user->getPrimary() !== $user->getId()}
+					<div class="btn-group" n:tag-if="$canDelete">
+						<a n:href="CreateOrEdit: id => $_user->getPrimary()" class="btn btn-small">{_Edit}</a>
+						{if $canDelete}
+						<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a n:href="Delete: id => $_user->getPrimary()"><i class="icon icon-remove-circle"></i> {_Delete}</a></li>
+						</ul>
+						{/if}
+					</div>
+				</td>
+			</tr>
+		</body>
+	</table>
+{/block}

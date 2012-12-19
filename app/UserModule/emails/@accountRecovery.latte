@@ -1,0 +1,28 @@
+{_'Account Recovery - %s', $project}
+
+
+
+
+<p>{!_'Hello,
+you or someone else tried to recover your password.
+If it is not the case please just ignore this email.'|nl2br}</p>
+<p>{!_'You can <a href="%s">set new password</a>
+Link will expire in few hours.', $setPasswordUrl|nl2br}</p>
+<p>{!_'You can always try to <a href="%s">recover your password</a> again.', $accountRecoveryUrl}</p>
+<p>{!_'With wish of sunny day
+%s &mdash; <em>%s</em>', $person, $template->translate($position)|nl2br}</p>
+
+
+
+
+{_'Hello,
+you or someone else tried to recover your password.
+If it is not the case please just ignore this email.'}
+
+{_'You can set new password via this url %s
+It will expire in few hours.', $setPasswordUrl}
+
+{_'You can always try to recover your password again using this url %s', $accountRecoveryUrl}
+
+{_'With wish of sunny day
+%s - %s', $person, $template->translate($position)}

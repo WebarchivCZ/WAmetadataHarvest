@@ -1,0 +1,433 @@
+{
+    "hash": "dad27ac98ee15f5e8a340d92d3e8366a",
+    "packages": [
+        {
+            "name": "geshi/geshi",
+            "version": "1.0.8.11",
+            "dist": {
+                "type": "zip",
+                "url": "http://garr.dl.sourceforge.net/project/geshi/geshi/GeSHi%201.0.8.11/GeSHi-1.0.8.11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist"
+        },
+        {
+            "name": "janmarek/navigation",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/janmarek/Navigation.git",
+                "reference": "master"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/janmarek/Navigation/zipball/master",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist"
+        },
+        {
+            "name": "jquery/jquery",
+            "version": "1.8.3",
+            "dist": {
+                "type": "file",
+                "url": "http://code.jquery.com/jquery-1.8.3.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist"
+        },
+        {
+            "name": "kdyby/bootstrap-form-renderer",
+            "version": "v1.0.0",
+            "target-dir": "Kdyby/Extension/Forms/BootstrapRenderer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kdyby/FormsBootstrapRendererExtension",
+                "reference": "v1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Kdyby/FormsBootstrapRendererExtension/zipball/v1.0.0",
+                "reference": "v1.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "nette/nette": "2.0.*"
+            },
+            "conflict": {
+                "kdyby/framework": "self.version"
+            },
+            "time": "2012-10-10 01:42:20",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Kdyby\\Extension\\Forms\\BootstrapRenderer": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Procházka",
+                    "homepage": "http://filip-prochazka.com"
+                }
+            ],
+            "description": "Nette forms renderer with bootstrap",
+            "homepage": "http://kdyby.org",
+            "keywords": [
+                "bootstrap",
+                "Forms",
+                "nette",
+                "kdyby"
+            ]
+        },
+        {
+            "name": "mishak/archive-tar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mishak87/archive-tar",
+                "reference": "4fda66d165600e5e41487e7b9f858fad9036a599"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mishak87/archive-tar/archive/4fda66d165600e5e41487e7b9f858fad9036a599.zip",
+                "reference": "4fda66d165600e5e41487e7b9f858fad9036a599",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "1355259334",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Mishak\\ArchiveTar": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Michal Gebauer",
+                    "email": "mishak@mishak.net",
+                    "homepage": "https://mishak.net",
+                    "role": "developer"
+                }
+            ],
+            "description": "Archive TAR reader for PHP - supports gz, bz2 and files over 2 GB",
+            "keywords": [
+                "reader",
+                "archive",
+                "tar"
+            ]
+        },
+        {
+            "name": "mishak/web-resource-management",
+            "version": "1.1.6",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:mishak87/web-resource-management.git",
+                "reference": "1.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mishak87/web-resource-management/archive/1.1.6.zip",
+                "reference": "1.1.6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "nette/nette": ">=2.0.6"
+            },
+            "time": "2012-11-26 21:00:52",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Mishak\\WebResourceManagement": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Michal Gebauer",
+                    "email": "mishak@mishak.net",
+                    "homepage": "https://mishak.net",
+                    "role": "developer"
+                }
+            ],
+            "description": "Tools for management of scripts and styles (using Nette Framework)",
+            "keywords": [
+                "dependency",
+                "manager",
+                "nette",
+                "scripts",
+                "style",
+                "resource"
+            ]
+        },
+        {
+            "name": "mishak/wrm-bootstrap",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mishak87/wrm-bootstrap",
+                "reference": "2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mishak87/wrm-bootstrap/archive/2.2.1.zip",
+                "reference": "2.2.1",
+                "shasum": ""
+            },
+            "require": {
+                "mishak/web-resource-management": ">=0.1.1"
+            },
+            "time": "2012-11-26 16:07:08",
+            "type": "library",
+            "installation-source": "dist",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Michal Gebauer",
+                    "email": "mishak@mishak.net",
+                    "homepage": "https://mishak.net",
+                    "role": "developer"
+                }
+            ],
+            "description": "Bootstrap for Nette projects using Web Resource Management",
+            "keywords": [
+                "bootstrap",
+                "nette",
+                "web resource management"
+            ]
+        },
+        {
+            "name": "mishak/wrm-jquery",
+            "version": "1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mishak87/wrm-jquery",
+                "reference": "1.8.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mishak87/wrm-jquery/archive/1.8.3.zip",
+                "reference": "1.8.3",
+                "shasum": ""
+            },
+            "require": {
+                "mishak/web-resource-management": ">=0.1.1",
+                "jquery/jquery": "1.8.3"
+            },
+            "time": "2012-11-26 23:52:01",
+            "type": "library",
+            "installation-source": "dist",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Michal Gebauer",
+                    "email": "mishak@mishak.net",
+                    "homepage": "https://mishak.net",
+                    "role": "developer"
+                }
+            ],
+            "description": "jQuery for Nette projects using Web Resource Management",
+            "keywords": [
+                "bootstrap",
+                "nette",
+                "web resource management"
+            ]
+        },
+        {
+            "name": "nette/nette",
+            "version": "v2.0.7",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/nette/nette",
+                "reference": "v2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nette/nette/archive/v2.0.7.zip",
+                "reference": "v2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "ext-iconv": "*",
+                "ext-tokenizer": "*"
+            },
+            "require-dev": {
+                "nette/tester": "@dev"
+            },
+            "suggest": {
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "ext-memcache": "*",
+                "ext-gd": "*",
+                "ext-fileinfo": "*"
+            },
+            "time": "2012-11-28 12:41:04",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "Nette/loader.php"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "http://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Framework - innovative framework for fast and easy development of secured web applications in PHP. Write less, have cleaner code and your work will bring you joy.",
+            "homepage": "http://nette.org",
+            "keywords": [
+                "templating",
+                "framework",
+                "database",
+                "dbal",
+                "debugging",
+                "mvc",
+                "micro",
+                "Forms",
+                "latte",
+                "neon",
+                "mailing",
+                "images"
+            ]
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twitter/bootstrap.git",
+                "reference": "tags/v2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/twitter/bootstrap/zipball/v2.2.1",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist"
+        },
+        {
+            "name": "vojtech-dobes/composer-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vojtech-dobes/nette-composer-extension.git",
+                "reference": "a84dfe4dbc9c65f2020b8fd7e68d3348d894457d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/vojtech-dobes/nette-composer-extension/archive/a84dfe4dbc9c65f2020b8fd7e68d3348d894457d.zip",
+                "reference": "a84dfe4dbc9c65f2020b8fd7e68d3348d894457d",
+                "shasum": ""
+            },
+            "require": {
+                "nette/nette": ">=2.0.4"
+            },
+            "time": "1344296561",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "classmap": [
+                    "/"
+                ]
+            },
+            "license": [
+                "New BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vojtěch Dobeš",
+                    "email": "me@vojtechdobes.com"
+                }
+            ],
+            "description": "Autoregisters extensions downloaded via Composer (for Nette Framework)",
+            "homepage": "http://github.com/vojtech-dobes/ComposerExtension",
+            "keywords": [
+                "composer",
+                "config",
+                "di",
+                "nette"
+            ]
+        },
+        {
+            "name": "vojtech-dobes/nette.ajax.js",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vojtech-dobes/nette.ajax.js",
+                "reference": "tags/v1.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/vojtech-dobes/nette.ajax.js/archive/1.2.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library",
+            "installation-source": "dist"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "vojtech-dobes/composer-extension": 20,
+        "mishak/archive-tar": 20,
+        "nette/tester": 20,
+        "kdyby/redis-extension": 20
+    }
+}

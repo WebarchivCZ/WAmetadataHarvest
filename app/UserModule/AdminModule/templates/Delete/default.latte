@@ -1,0 +1,13 @@
+{block admin}
+{form form}
+<div class="alert alert-block">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<h4>{_'Warning!'}</h4>
+	{_'You are about to delete user %s from system. Do you want to proceed?', $userToDelete->username}
+	<div class="btn-toolbar">
+		<a n:href="Dashboard:" class="btn">{_Cancel}</a>
+		{input delete class => 'btn btn-danger'}
+	</div>
+</div>
+{/form}
+{/block}

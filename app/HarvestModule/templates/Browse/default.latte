@@ -1,0 +1,86 @@
+{block script}
+<script n:if="$percent < 100">
+var prefetch = {
+	url: {plink //prefetch!},
+}
+$(function(){
+	var progress = $('div.progress .bar'),
+		prefetchCall = function () {
+			$.get(prefetch.url, function (payload) {
+				progress.width(payload.percent + '%')
+				if (payload.percent == 100) {
+					window.setTimeout(function () {
+						progress.parent().slideUp()
+					}, 1000)
+				} else {
+					window.setTimeout(prefetchCall, 0)
+				}
+			}, 'json')
+		}
+	prefetchCall();
+});
+</script>
+{/block}
+
+{block content}
+{snippet overview}
+{if $harvest}
+	{include ../@overview.latte showDirectory => FALSE, percent => $percent}
+{/if}
+{/snippet}
+<div class="row">
+	<div class="span3">
+		{snippet tree}
+		<ul class="nav nav-list">
+			{foreach $tree as $root => $_directories}
+				<li class="nav-header"><i class="icon icon-hdd"></i>{$root}</li>
+				{var _path = $root}
+				{var _slugs = []}
+				{if reset($slugs) === $root}{?$_slugs = $slugs}{?array_shift($_slugs)}{/if}
+				{block directories}
+					{foreach $_directories as $directory => $subdirectories}
+					{var active = reset($_slugs) === $directory}
+					<li n:class="$active && count($_slugs) == 1 ? active">
+						{var currentPath = rtrim($_path, HarvestModule\Directories::SEPARATOR) . HarvestModule\Directories::SEPARATOR . $directory . HarvestModule\Directories::SEPARATOR}
+						<a n:href="this path => $currentPath" title="{$directory}"><i n:class="icon, $active ? icon-folder-open : icon-folder-close"></i> {$directory|truncate:15}</a>
+						{if $subdirectories}
+							<ul class="nav nav-list">
+								{var __slugs = []}
+								{if $active}{?$__slugs = $_slugs}{?array_shift($__slugs)}{/if}
+								{include #directories, _directories => $subdirectories, _slugs => $__slugs, _path => $currentPath}
+							</ul>
+						{/if}
+					</li>
+					{/foreach}
+				{/block}
+			{/foreach}
+		</ul>
+		{/snippet}
+	</div>
+	<div class="span9">
+
+		{snippet records}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{_'Name'}
+					<th>{_'Type'}
+					<th>{_'Size'}
+			</thead>
+			<tbody>
+				<tr n:foreach="$directories as $directory">
+					<td><a n:href="this path => $path . $directory->getBaseName() . HarvestModule\Directories::SEPARATOR"><i class="icon icon-folder-close"></i> {$directory->getBaseName()}</a>
+					<td class="muted"><i>{_'directory'}</i>
+					<td class="muted center">&mdash;
+				</tr>
+				<tr n:foreach="$files as $file">
+					<td><i class="icon icon-file"></i> {$file->getBaseName()}
+					<td class="muted">{$file->getExtension()}
+					<td class="muted right">{$file->getSize()|bytes:0}
+				</tr>
+			</tbody>
+		</table>
+		{/snippet}
+	</div>
+</div>
+{/block}

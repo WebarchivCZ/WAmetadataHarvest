@@ -1,0 +1,31 @@
+#Seedlist generated: 14.09.2011 16:51
+#Seeds count: 22
+#Archive-IT 2011-09
+http://www.platonskaspolecnost.cz
+http://miroslav.sigl.cz
+http://www.speleo.cz
+http://ajp.cuni.cz
+http://www.kgk.cz
+http://psych.fss.muni.cz/vybiral/
+http://www.cestananovyzeland.cz
+http://dendro.mojzisek.cz
+http://cenakrajiny.cz
+http://problemyvarmade.cz
+http://bohemistika.xf.cz
+http://www.im.fme.vutbr.cz
+http://www.engineeringmechanics.cz
+http://www.nfpk.cz
+http://anticomm.co.uk
+http://www.cavlmz.cz
+http://www.pedofilie-info.cz
+http://www.handsurgery.cz
+http://files.handsurgery.webnode.cz
+http://obec-hrusice.cz
+http://www.ssvs.cz
+http://srobf.cz
+# Heritrix added seed redirect from http://cenakrajiny.cz/ 20110914150040723.
+http://www.cenakrajiny.cz/joomla
+# Heritrix added seed redirect from http://www.cenakrajiny.cz/joomla 20110914150041194.
+http://www.cenakrajiny.cz/joomla/
+# Heritrix added seed redirect from http://anticomm.co.uk/ 20110914150043468.
+http://www.anticomm.co.uk/
